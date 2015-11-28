@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 11:40:19 by eebersol          #+#    #+#             */
-/*   Updated: 2015/11/27 11:46:20 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/11/28 15:39:54 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	*ft_memcpy(void *dst, void *src, size_t n)
 	while (--n)
 		*v1++ = *v2++;
 	*v1 = *v2;
-	return (dst)
+	return (dst);
 }

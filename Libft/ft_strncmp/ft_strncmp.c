@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 15:28:28 by eebersol          #+#    #+#             */
-/*   Updated: 2015/11/27 15:49:13 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/11/28 15:20:17 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 
 int		main(void)
 {
-	char s1[50] = "aaaaa";
-	char s2[] = "aaaaa";
-	printf("Result: %d", ft_strncmp(s1, s2, 2)); 
+	char s1[50] = "1234";
+	char s2[] = "aa";
+	printf("Result: %d", ft_strncmp(s1, s2, 3 )); 
 }
