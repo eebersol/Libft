@@ -1,41 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 14:41:18 by eebersol          #+#    #+#             */
-/*   Updated: 2015/11/28 17:29:42 by eebersol         ###   ########.fr       */
+/*   Created: 2015/11/28 17:39:04 by eebersol          #+#    #+#             */
+/*   Updated: 2015/11/28 17:44:50 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_strdel(char **as)
 {
-	unsigned char	*cur;
-
-	if (len == 0)
-		return (b);
-	cur = (unsigned char *)b;
-	while (len --)
+	if (as != NULL)
 	{
-		*cur = (unsigned char)c;
-		if (len)
-			cur ++;
+		free(*as);
+		*as = NULL;
 	}
-	return (b);
-}
-
-int		main()
-{
-	char b[50];
-	
-	strcpy(b,"This is string.h library function");
-	puts(b);
-	memset(b,'$',7);
-	puts(b);
-	return (0);
 }

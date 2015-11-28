@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 14:41:18 by eebersol          #+#    #+#             */
-/*   Updated: 2015/11/28 17:29:42 by eebersol         ###   ########.fr       */
+/*   Created: 2015/11/28 17:45:29 by eebersol          #+#    #+#             */
+/*   Updated: 2015/11/28 18:07:25 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+int		ft_strequ(char const *s1, char const *s2)
 {
-	unsigned char	*cur;
+	int i;
+	int j;
 
-	if (len == 0)
-		return (b);
-	cur = (unsigned char *)b;
-	while (len --)
-	{
-		*cur = (unsigned char)c;
-		if (len)
-			cur ++;
-	}
-	return (b);
-}
-
-int		main()
-{
-	char b[50];
 	
-	strcpy(b,"This is string.h library function");
-	puts(b);
-	memset(b,'$',7);
-	puts(b);
-	return (0);
+	i = ft_strcmp(s1 - s2)
+	j = ft_strcmp(s2 - s1)
+	if (i < 0 || i > 0 || j < 0 || j > 0)
+		return (0);
+	if ( i = 0 || j = 0)
+		return (1);
 }

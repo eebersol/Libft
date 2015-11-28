@@ -1,41 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 14:41:18 by eebersol          #+#    #+#             */
-/*   Updated: 2015/11/28 17:29:42 by eebersol         ###   ########.fr       */
+/*   Created: 2015/11/28 18:08:04 by eebersol          #+#    #+#             */
+/*   Updated: 2015/11/28 18:13:34 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_striter(char *s, void (*f) (char*))
 {
-	unsigned char	*cur;
-
-	if (len == 0)
-		return (b);
-	cur = (unsigned char *)b;
-	while (len --)
-	{
-		*cur = (unsigned char)c;
-		if (len)
-			cur ++;
-	}
-	return (b);
-}
-
-int		main()
-{
-	char b[50];
-	
-	strcpy(b,"This is string.h library function");
-	puts(b);
-	memset(b,'$',7);
-	puts(b);
-	return (0);
+	if (s == NULL || f == NULL)
+		return (0);
+	while (s != NULL && *s)
+		f(s++);
 }

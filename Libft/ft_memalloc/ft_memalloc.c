@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 14:41:18 by eebersol          #+#    #+#             */
-/*   Updated: 2015/11/28 17:29:42 by eebersol         ###   ########.fr       */
+/*   Created: 2015/11/28 17:21:33 by eebersol          #+#    #+#             */
+/*   Updated: 2015/11/28 17:31:23 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <string.h>
-#include <stdio.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memalloc(size_t size)
 {
-	unsigned char	*cur;
+	void	*temp_mem;
 
-	if (len == 0)
-		return (b);
-	cur = (unsigned char *)b;
-	while (len --)
-	{
-		*cur = (unsigned char)c;
-		if (len)
-			cur ++;
-	}
-	return (b);
-}
-
-int		main()
-{
-	char b[50];
-	
-	strcpy(b,"This is string.h library function");
-	puts(b);
-	memset(b,'$',7);
-	puts(b);
-	return (0);
+	mem = malloc(size);
+	if (tmp_mem == NULL)
+		return (NULL);
+	ft_memset(mem, 0 ,size):
+		return (mem);
 }

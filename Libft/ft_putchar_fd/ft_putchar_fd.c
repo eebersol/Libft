@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 14:41:18 by eebersol          #+#    #+#             */
-/*   Updated: 2015/11/28 17:29:42 by eebersol         ###   ########.fr       */
+/*   Created: 2015/11/28 18:14:06 by eebersol          #+#    #+#             */
+/*   Updated: 2015/11/28 18:21:52 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include <unistd.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned char	*cur;
-
-	if (len == 0)
-		return (b);
-	cur = (unsigned char *)b;
-	while (len --)
-	{
-		*cur = (unsigned char)c;
-		if (len)
-			cur ++;
-	}
-	return (b);
+	write(fd, &c, 1);
 }
 
-int		main()
+int		main(void)
 {
-	char b[50];
-	
-	strcpy(b,"This is string.h library function");
-	puts(b);
-	memset(b,'$',7);
-	puts(b);
+	char	c = 'B';
+	ft_putchar_fd(c, 2);
 	return (0);
 }
