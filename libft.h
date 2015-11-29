@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 14:40:25 by eebersol          #+#    #+#             */
-/*   Updated: 2015/11/28 15:38:14 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/11/29 13:39:41 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,6 @@ void	ft_putstr(char const *s);
 void	ft_putnbr(int n);
 void	ft_striter(char *s, void (*f) (char *)); // pas encore fait.
 void	ft_strdel(char **as); // pas encore fait.
-void	ft_strdel(char **as); // pas encore fait.
-void	ft_strclr(char *s); // pas encore fait.
 void	ft_strclr(char *s); // pas encore fait.
 void	ft_striteri(char *s, void (*f) (unsigned int, char *s)); //pas encore fait.
 char	*ft_strmap(char const *s, char (*f)(char)); // pas encore fait.

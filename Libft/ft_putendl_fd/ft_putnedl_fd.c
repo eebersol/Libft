@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_putnedl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/28 18:08:04 by eebersol          #+#    #+#             */
-/*   Updated: 2015/11/29 13:47:48 by eebersol         ###   ########.fr       */
+/*   Created: 2015/11/29 14:24:57 by eebersol          #+#    #+#             */
+/*   Updated: 2015/11/29 14:43:39 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striter(char *s, void (*f) (char*))
+void	ft_putendl_fd(char const *s, int fd)
 {
-	if (s == NULL || f == NULL)
-		return (0);
-	while (s)
-		f(s++);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

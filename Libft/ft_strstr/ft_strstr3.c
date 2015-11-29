@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_strstr3.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/28 18:08:04 by eebersol          #+#    #+#             */
-/*   Updated: 2015/11/29 13:47:48 by eebersol         ###   ########.fr       */
+/*   Created: 2015/11/29 13:49:40 by eebersol          #+#    #+#             */
+/*   Updated: 2015/11/29 14:07:06 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "Libft.h"
 
-void	ft_striter(char *s, void (*f) (char*))
+char	*ft_strstr(const char *s1, const char char *s2)
 {
-	if (s == NULL || f == NULL)
+	int	i;
+	int	j;
+
+	if (s1[i] == '\0' || s2[j] == '\0')
 		return (0);
-	while (s)
-		f(s++);
-}
+	while (s1[i] != '\0' || s2[i] != '\0')
+	{
+		while ((char *)s1 == (char *)s2)
+		{
+			i++;
+			j++;
+			if ((char *)s1 != (char *)s2)
+					j = 0;
+
