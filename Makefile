@@ -1,4 +1,4 @@
-# **************************************************************************** #
+#***************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -6,7 +6,7 @@
 #    By: eebersol <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/30 13:01:06 by eebersol          #+#    #+#              #
-#    Updated: 2015/11/30 19:48:49 by eebersol         ###   ########.fr        #
+#    Updated: 2015/12/01 15:39:43 by eebersol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRCS 	= ft_memset.c \
 	   	ft_strncat.c \
 	   	ft_strlcat.c \
 	   	ft_strrchr.c \
+		ft_strchr.c \
 	   	ft_strstr.c \
 	   	ft_strnstr.c \
 	   	ft_strcmp.c \
@@ -51,22 +52,25 @@ SRCS 	= ft_memset.c \
 	   	ft_putchar_fd.c \
 	   	ft_putstr_fd.c \
 
-OBJS 	= $(SRCS:.c=.o)
+HEADERS  = includes/libft.h
 
-CFLAGS 	= gcc -Wall -Wextra -Werror -c
+OBJS 	= $(subst .c,.o,$(SRCS))
+
+CFLAGS 	= -Wall -Wextra -Werror
 
 all		: $(NAME)
 
-$(NAME)	: 
-	@mkdir bin
-	@$(CFLAGS) $(SRCS)
+$(NAME)	:
+	@gcc -c $(CFLAGS) $(SRCS) -I . 
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
-	@mv $(OBJS) bin/
 	@echo "Library complet"
 
+$(OBJS) : $(NAME) $(HEADERS)
+	@gcc $(CFLAGS) -c $(SRCS)
+
 clean	: 
-	@rm -rf bin
+	@rm -rf $(OBJS)
 	@echo "Cleaned"
 
 fclean	: clean
