@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 14:40:25 by eebersol          #+#    #+#             */
-/*   Updated: 2015/11/30 19:39:52 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/01 19:23:30 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 // BASIQUE
 
@@ -32,7 +33,7 @@ char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strncpy(char *dst, const char *src, size_t n);
 char	*ft_strcat(char *s1, const char *s2);
 char	*ft_strncat(char *s1, const char *s2, size_t n);
-//size_t	ft_strlcat(char *dst, const char *src, size_t size); // pas encore fait.
+size_t	ft_strlcat(char *dst, const char *src, size_t size); // pas encore fait.
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strstr(const char *s1, const char *s2);
