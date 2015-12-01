@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 12:53:25 by eebersol          #+#    #+#             */
-/*   Updated: 2015/11/30 19:36:06 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/01 20:28:25 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ char	*ft_strstr(const char *s1, const char *s2)
 	int size;
 
 	i = 0;
-	if (s1[0] == '\0')
+	if (s2[i] == '"')
+		i++;
+	if (s1[i] == '\0')
 		return (0);
 	while (s1[i] != '\0')
 	{
@@ -32,5 +34,5 @@ char	*ft_strstr(const char *s1, const char *s2)
 			return ((char *)(&s1[i - size]));
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

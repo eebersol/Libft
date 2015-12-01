@@ -6,28 +6,27 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 12:31:30 by eebersol          #+#    #+#             */
-/*   Updated: 2015/11/30 17:25:55 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/01 17:14:48 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	int	i;
-	int j;
+	size_t	i;
+	size_t  j;
 
 	i = 0;
 	j = 0;
 	while (s1[j] != '\0')
 		j++;
-	while (s2[i] != '\0' || n--)
+	while (i < n)
 	{
 		s1[j] = s2[i];
 		i++;
 		j++;
 	}
-	s1[i] = '\0';
+	s1[j] = '\0';
 	return (s1);
 }
