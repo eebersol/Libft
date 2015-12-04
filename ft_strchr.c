@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 14:12:33 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/01 17:52:23 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/04 13:58:36 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strchr(const char *s, int c)
 {
 	while (*s != (char)c && *s != '\0')
 		s++;
-	if (*s == ((char )c))
+	if (*s == ((char)c))
 		return ((char*)s);
 	return (NULL);
 }

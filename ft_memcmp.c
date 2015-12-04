@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 12:13:28 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/01 19:54:06 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/04 13:46:01 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*tmp_s1;
-	unsigned char 	*tmp_s2;
+	unsigned char	*tmp_s2;
 	int				i;
 
 	if (!s1 && !s2 && !n)

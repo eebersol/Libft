@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 14:41:18 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/01 13:04:19 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/04 13:59:10 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void	*ft_memset(void *b, int c, size_t len)
 	if (len == 0)
 		return (b);
 	cur = (unsigned char *)b;
-	while (len --)
+	while (len--)
 	{
 		*cur = (unsigned char)c;
 		if (len)
-			cur ++;
+			cur++;
 	}
 	return (b);
 }

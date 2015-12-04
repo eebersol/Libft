@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 17:21:33 by eebersol          #+#    #+#             */
-/*   Updated: 2015/11/30 16:58:03 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/04 13:40:37 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ void	*ft_memalloc(size_t size)
 	tmp_mem = malloc(size);
 	if (tmp_mem == NULL)
 		return (NULL);
-	ft_memset(tmp_mem, 0 ,size);
-		return (tmp_mem);
+	ft_memset(tmp_mem, 0, size);
+	return (tmp_mem);
 }

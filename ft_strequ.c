@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 17:45:29 by eebersol          #+#    #+#             */
-/*   Updated: 2015/11/30 17:50:25 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/04 13:47:47 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 int		ft_strequ(char const *s1, char const *s2)
 {
 	int i;
-	
+
 	i = ft_strcmp(s1, s2);
 	if (i == 0)
 		return (1);
 	else
 		return (0);
 }
-

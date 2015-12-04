@@ -6,14 +6,13 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:16:58 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/01 20:28:33 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/04 13:50:08 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-int 	ft_strcmp(const char *s1, const char *s2)
+int		ft_strcmp(const char *s1, const char *s2)
 {
 	int i;
 	int len_s1;

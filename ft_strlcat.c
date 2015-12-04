@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 18:18:34 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/01 20:33:15 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/04 13:50:20 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n)
 		i++;
 	}
 	if (j < n)
-		dst[i]= '\0';
+		dst[i] = '\0';
 	return (j = ft_strlen(src));
 }
