@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/28 17:45:29 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/04 17:45:48 by eebersol         ###   ########.fr       */
+/*   Created: 2015/12/04 17:32:37 by eebersol          #+#    #+#             */
+/*   Updated: 2015/12/04 17:33:19 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strequ(char const *s1, char const *s2)
+int	ft_abs(int n)
 {
-	int i;
-
-	i = ft_strcmp(s1, s2);
-	if (i == 0)
-		return (1);
-	else
-		return (0);
+	if (n < 0)
+		return (-n);
+	return (n);
 }

@@ -6,16 +6,11 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 18:20:48 by eebersol          #+#    #+#             */
-/*   Updated: 2015/11/30 17:27:49 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/04 17:49:38 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar_fd(char c, int fd)
-{
-	write(1, &c, fd);
-}
+#include "libft.h"
 
 void	ft_putstr_fd(char const *s, int fd)
 {
