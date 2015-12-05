@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 12:53:25 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/01 20:28:25 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/05 19:52:12 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,25 @@
 
 char	*ft_strstr(const char *s1, const char *s2)
 {
-	int i;
-	int size;
+	int 	i;
+	int 	j;
+	char 	*cs_1;
+	char 	*cs_2;
 
 	i = 0;
-	if (s2[i] == '"')
-		i++;
-	if (s1[i] == '\0')
-		return (0);
-	while (s1[i] != '\0')
+	cs_1 = ((char *)s1);
+	cs_2 = ((char *)s2);
+	if (cs_2[0] == '\0')
+		return (cs_1);
+	while (cs_1[i])
 	{
-		size = 0;
-		while (s1[i] == s2[size])
+		while(cs_1[i + j] == cs_2[j])
 		{
-			i++;
-			size++;
+			j++;
+			if (cs_2[j] == '\0')
+					return (&cs_1[i]);
 		}
-		if (s2[size] == '\0')
-			return ((char *)(&s1[i - size]));
+		j = 0;
 		i++;
 	}
 	return (NULL);

@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 17:39:04 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/01 15:19:07 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/05 19:23:00 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	ft_strdel(char **as)
 {
-	if (as != NULL)
-	{
-		free(*as);
-		*as = NULL;
-	}
+	if (as != NULL && *as != NULL)
+		ft_memdel((void**)as);
 }
