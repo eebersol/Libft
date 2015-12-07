@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 14:19:20 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/01 19:19:57 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/07 15:52:44 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int		ft_atoi(const char *str)
 		negative = 1;
 		i++;
 	}
+	if (str[i] == '-' || str[i] == '+')
+		i++;
 	while (str[i] >= '0' && str[i] <= '9' && str[i])
 	{
 		value = value * 10 + (str[i] - '0');

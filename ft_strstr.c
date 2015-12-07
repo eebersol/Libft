@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 12:53:25 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/05 19:52:12 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/07 16:53:47 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strstr(const char *s1, const char *s2)
 	cs_2 = ((char *)s2);
 	if (cs_2[0] == '\0')
 		return (cs_1);
-	while (cs_1[i])
+	while(cs_1[i])
 	{
 		while(cs_1[i + j] == cs_2[j])
 		{

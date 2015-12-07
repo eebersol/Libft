@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 18:23:13 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/04 14:03:48 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/07 16:57:26 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,22 @@
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
-	size_t size;
+	size_t	len;
+	size_t	i;
 
-	size = 0;
+	if (!s1 || !s2 || !n)
+		return (NULL);
+	len = ft_strlen(s2);
+	if (n < len)
+		return (NULL);
+	if (!*s2)
+		return ((char *)s1);
 	i = 0;
-	while (size < n)
+	while (s1[i] && i <= (n - len))
 	{
-		if (s1[0] == '\0')
-			return (0);
-		while (s1[i] == s2[size])
-		{
-			i++;
-			size++;
-		}
-		if (s2[size] == '\0')
-			return ((char *)(&s1[i - size]));
+		if (ft_strncmp(&s1[i], s2, len) == 0)
+			return ((char *)&s1[i]);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

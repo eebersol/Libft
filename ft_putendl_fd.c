@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 14:07:57 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/05 19:31:27 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/07 17:01:04 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putendl_fd (char const *s, int fd)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+		ft_putstr_fd(s, fd);
+		ft_putchar_fd('\n', fd);
 }

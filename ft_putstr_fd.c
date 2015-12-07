@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 18:20:48 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/04 17:49:38 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/07 18:27:22 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putstr_fd(char const *s, int fd)
 	int i;
 
 	i = 0;
-	while (!s)
+	while (s[i])
 	{
 		ft_putchar_fd(s[i], fd);
 		i++;

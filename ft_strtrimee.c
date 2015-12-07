@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strtrimee.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 15:41:17 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/07 19:31:02 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/07 19:24:03 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,23 @@
 char	*ft_strtrim(char const *s)
 {
 	char	*result;
-	int		i;
-	int		len;
+	int		start;
+	size_t	len;
 
 	len = ft_strlen(s);
-	i = 0;
-	result = (char *)malloc(sizeof(char *) * (len + 1));
+	start = 0;
+	result = (char *)malloc(sizeof(char *) * (len));
 	if (s == NULL)
 		return (NULL);
-	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
-		i++;
+	while (s[start] == ' ' || s[start] == '\n' || s[start] == '\t')
+		start++;
 	while (s[len - 1] == ' ' || s[len - 1] == '\n' || s[len - 1] == '\t')
 		len--;
 	if (len <= 0)
 		len = 0;
 	if (result == NULL)
 		return (NULL);
-	while (i <= len)
-		result[i] = s[i];
-		i++;
-	result[i] = '\0';
+	ft_strsub(s, start, len);
+	*result = *s;
 	return (result);
 }
