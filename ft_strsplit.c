@@ -6,13 +6,13 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 14:55:51 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/05 17:41:31 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/10 20:23:02 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_part_nbr(const char *s, char c)
+static int		ft_part_nbr(const char *s, char c)
 {
 	int nbr;
 	int part;
@@ -21,7 +21,7 @@ static int	ft_part_nbr(const char *s, char c)
 	part = 0;
 	while (*s != '\0')
 	{
-		if (part == 1 &&*s == c)
+		if (part == 1 && *s == c)
 			part = 0;
 		if (part == 0 && *s != c)
 		{
@@ -33,7 +33,7 @@ static int	ft_part_nbr(const char *s, char c)
 	return (nbr);
 }
 
-static int	ft_part_len(const char *s, char c)
+static int		ft_part_len(const char *s, char c)
 {
 	int len;
 
@@ -46,17 +46,17 @@ static int	ft_part_len(const char *s, char c)
 	return (len);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
-	char **t;
-	int	nb_word;
-	int	i;
+	char	**t;
+	int		nb_word;
+	int		i;
 
 	i = 0;
 	nb_word = ft_part_nbr((const char *)s, c);
 	t = (char **)malloc(sizeof(*t) * (ft_part_nbr((const char *)s, c) + 1));
 	if (t == NULL)
-	return (NULL);
+		return (NULL);
 	while (nb_word--)
 	{
 		while (*s == c && *s != '\0')

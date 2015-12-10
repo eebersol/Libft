@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 18:23:13 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/08 17:38:38 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/10 20:27:39 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 	size_t	len;
 	size_t	i;
 
-	if (!s1 || !s2 || !n)
-		return (NULL);
+//	if (!s1 || !s2 || !n)
+//		return(NULL);
 	len = ft_strlen(s2);
 	if (n < len)
 		return (NULL);

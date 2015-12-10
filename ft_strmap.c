@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 15:25:19 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/08 21:06:35 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/10 18:59:40 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,18 @@
 char	*ft_strmap(char const *s, char (*f) (char))
 {
 	size_t	i;
-	size_t	len;
-	char	*str;
+	char	*result;
 
-	if (s && f)
+	if (!(result = (char*)malloc(sizeof(*result) * (ft_strlen(s) + 1))))
+		return (NULL);
+	if (s == NULL || f == NULL || result == NULL)
+		return (NULL);
+	i = 0;
+	while (s[i])
 	{
-		len = ft_strlen(s);
-		str =  ft_memalloc(len);
-		i = 0;
-		while (i < len && s[i])
-		{
-			str[i] = f(s[i]);
-			i++;
-		}
-		str[i] = '\0';
-		return (str);
+		result[i] = f(s[i]);
+		i++;
 	}
-	return (NULL);
+	result[i] = '\0';
+	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 17:25:16 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/08 21:07:18 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/10 19:32:02 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,23 +27,23 @@ static int	ft_len_int(int nbr)
 	return (nbr_len);
 }
 
-static int ft_value_int(int nbr)
+static int	ft_value_int(int nbr)
 {
 	if (nbr < 0)
 		return (1);
 	return (0);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
-	int		nbr_len;
-	int		value;
-	char 	*result;
+	int	nbr_len;
+	int	value;
+	char *result;
 
 	value = ft_value_int(n);
 	nbr_len = ft_len_int(n);
 	result = NULL;
-	result = (char *)malloc(sizeof(char) * (nbr_len + value  +1));
+	result = (char*)malloc(sizeof(char) * (nbr_len + value + 1));
 	if (result)
 	{
 		result = result + nbr_len + value;
@@ -53,7 +53,7 @@ char	*ft_itoa(int n)
 		while (n != 0)
 		{
 			*--result = ft_abs(n % 10) + '0';
-			n = n /10;
+			n = n / 10;
 		}
 		if (value)
 			*--result = '-';
