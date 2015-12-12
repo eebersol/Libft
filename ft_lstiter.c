@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/30 12:53:25 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/11 18:00:32 by eebersol         ###   ########.fr       */
+/*   Created: 2015/12/12 19:45:59 by eebersol          #+#    #+#             */
+/*   Updated: 2015/12/12 19:56:52 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-char	*ft_strstr(const char *s1, const char *s2)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	size_t i;
-	size_t j;
+	t_list	*nextlist;
 
-	if (!*s2)
-		return ((char*)s1);
-	i = 0;
-	while (s1[i])
+	while (lst)
 	{
-		j = 0;
-		while (s1[i + j] == s2[j])
-		{
-			if (s2[j + 1] == '\0')
-				return ((char *)&s1[i]);
-			j++;
-		}
-		i++;
+		nextlist = lst->next;
+		f(lst);
+		lst = nextlist;
 	}
-	return (NULL);
 }

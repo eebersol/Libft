@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 17:32:04 by eebersol          #+#    #+#             */
-/*   Updated: 2015/11/30 16:58:20 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/11 19:14:24 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_strclr(char *s)
 {
 	int i;
 
+	if (s == NULL)
+		return ;
 	i = ft_strlen(s);
 	while (i >= 0)
 	{

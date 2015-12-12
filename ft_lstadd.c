@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/30 12:53:25 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/11 18:00:32 by eebersol         ###   ########.fr       */
+/*   Created: 2015/12/12 20:03:00 by eebersol          #+#    #+#             */
+/*   Updated: 2015/12/12 20:04:54 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *s1, const char *s2)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	size_t i;
-	size_t j;
-
-	if (!*s2)
-		return ((char*)s1);
-	i = 0;
-	while (s1[i])
+	if (alst != NULL && new != NULL)
 	{
-		j = 0;
-		while (s1[i + j] == s2[j])
-		{
-			if (s2[j + 1] == '\0')
-				return ((char *)&s1[i]);
-			j++;
-		}
-		i++;
+		new->next = *alst;
+		*alst = new;
 	}
-	return (NULL);
 }

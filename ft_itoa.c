@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 17:25:16 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/10 19:32:02 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/12 19:22:27 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ static int	ft_value_int(int nbr)
 
 char		*ft_itoa(int n)
 {
-	int	nbr_len;
-	int	value;
-	char *result;
+	int		nbr_len;
+	int		value;
+	char	*result;
 
 	value = ft_value_int(n);
 	nbr_len = ft_len_int(n);

@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 16:24:30 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/10 19:32:44 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/12 19:45:53 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 char	*ft_strnew(size_t size)
 {
-	char	*s;
+	char			*s;
+	long long int	t;
 
-	if (!(s = (char *)malloc(sizeof(size) + 1)))
-		return (NULL);
-	if (size >= 4294967295)
-		return (0);
+	t = size;
+	s = (char *)malloc(sizeof(char) * (t + 1));
 	if (s == NULL)
 		return (NULL);
-	while (!s)
-		ft_bzero(s, size);
+	ft_bzero(s, t + 1);
 	return (s);
 }

@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/30 12:53:25 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/11 18:00:32 by eebersol         ###   ########.fr       */
+/*   Created: 2015/12/12 19:55:29 by eebersol          #+#    #+#             */
+/*   Updated: 2015/12/12 20:16:45 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *s1, const char *s2)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	size_t i;
-	size_t j;
+	t_list	*list;
 
-	if (!*s2)
-		return ((char*)s1);
-	i = 0;
-	while (s1[i])
-	{
-		j = 0;
-		while (s1[i + j] == s2[j])
-		{
-			if (s2[j + 1] == '\0')
-				return ((char *)&s1[i]);
-			j++;
-		}
-		i++;
-	}
-	return (NULL);
+	list = (t_list*)malloc(sizeof(t_list));
+//	ft_lstiter(lst, f(list));
+	list = lst;
+
+	if (f(list) == NULL)
+		return (NULL);
+	return (list);
 }

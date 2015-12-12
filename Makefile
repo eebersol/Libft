@@ -6,7 +6,7 @@
 #    By: eebersol <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/30 13:01:06 by eebersol          #+#    #+#              #
-#    Updated: 2015/12/10 16:45:50 by eebersol         ###   ########.fr        #
+#    Updated: 2015/12/12 20:05:19 by eebersol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,6 +65,12 @@ SRCS 	= ft_memset.c \
 		ft_strsplit.c \
 		ft_itoa.c \
 		ft_abs.c \
+		ft_lstnew.c \
+		ft_lstdelone.c \
+		ft_lstdel.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
+		ft_lstadd.c \
 
 HEADERS  = includes/libft.h
 

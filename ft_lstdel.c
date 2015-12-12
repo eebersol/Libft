@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/30 12:53:25 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/11 18:00:32 by eebersol         ###   ########.fr       */
+/*   Created: 2015/12/12 18:17:46 by eebersol          #+#    #+#             */
+/*   Updated: 2015/12/12 19:49:19 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *s1, const char *s2)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	size_t i;
-	size_t j;
-
-	if (!*s2)
-		return ((char*)s1);
-	i = 0;
-	while (s1[i])
-	{
-		j = 0;
-		while (s1[i + j] == s2[j])
-		{
-			if (s2[j + 1] == '\0')
-				return ((char *)&s1[i]);
-			j++;
-		}
-		i++;
+	t_list	*list;
+	t_list	*nextlist;
+	
+	list = *alst;
+	while (list)
+	{	
+		nextlist = list->next;
+		del(list->content, list->content_size);
+		free(list);
+		list = nextlist;
 	}
-	return (NULL);
+	*alst = NULL;
 }

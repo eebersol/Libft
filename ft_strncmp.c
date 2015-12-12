@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 15:28:28 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/10 20:33:02 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/11 19:07:10 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-//	if (s1 && s2 && n)
 	while (n-- > 0)
 	{
 		if (*s1 != *s2)
