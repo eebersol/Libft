@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_len_int.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/12 19:55:29 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/13 15:58:03 by eebersol         ###   ########.fr       */
+/*   Created: 2015/12/13 16:07:27 by eebersol          #+#    #+#             */
+/*   Updated: 2015/12/13 16:09:04 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+int		ft_len_int(int nbr)
 {
-	t_list *new_lst;
-	t_list *f_elem;
-	t_list *basic_elem;
+	int nbr_len;
 
-	new_lst = NULL;
-	if (lst && (*f))
+	if (nbr == 0)
+		return (1);
+	nbr_len = 0;
+	while (nbr != 0)
 	{
-		new_lst = (*f)(lst);
-		basic_elem = new_lst;
-		lst = lst->next;
-		while (lst)
-		{
-			f_elem = (*f)(lst);
-			basic_elem->next = f_elem;
-			basic_elem = f_elem;
-			lst = lst->next;
-		}
-		basic_elem->next = NULL;
+		nbr_len++;
+		nbr = nbr / 10;
 	}
-	return (new_lst);
+	return (nbr_len);
 }

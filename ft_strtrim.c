@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 15:01:09 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/12 20:50:46 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/13 15:40:36 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,10 @@ char	*ft_strtrim(char const *s)
 	while ((s[i] != '\0') && i < len && (s[i] == ' ' || s[i] == '\n'
 			|| s[i] == '\t'))
 		i++;
-
 	if (!(result = (char*)malloc(sizeof(char) * (len - i + 1))))
 		return (NULL);
 	j = 0;
-	while (i < len)/	
+	while (i < len)
 	{
 		result[j] = s[i];
 		i++;

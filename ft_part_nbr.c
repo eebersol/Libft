@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_part_nbr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/12 19:55:29 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/13 15:58:03 by eebersol         ###   ########.fr       */
+/*   Created: 2015/12/13 15:59:55 by eebersol          #+#    #+#             */
+/*   Updated: 2015/12/13 16:06:35 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+int		ft_part_nbr(const char *s, char c)
 {
-	t_list *new_lst;
-	t_list *f_elem;
-	t_list *basic_elem;
+	int nbr;
+	int part;
 
-	new_lst = NULL;
-	if (lst && (*f))
+	nbr = 0;
+	part = 0;
+	while (*s != '\0')
 	{
-		new_lst = (*f)(lst);
-		basic_elem = new_lst;
-		lst = lst->next;
-		while (lst)
+		if (part == 1 && *s == c)
+			part = 0;
+		if (part == 0 && *s != c)
 		{
-			f_elem = (*f)(lst);
-			basic_elem->next = f_elem;
-			basic_elem = f_elem;
-			lst = lst->next;
+			part = 1;
+			nbr++;
 		}
-		basic_elem->next = NULL;
+		s++;
 	}
-	return (new_lst);
+	return (nbr);
 }

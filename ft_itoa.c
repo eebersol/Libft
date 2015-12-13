@@ -6,33 +6,11 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 17:25:16 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/12 19:22:27 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/13 16:13:14 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_len_int(int nbr)
-{
-	int nbr_len;
-
-	if (nbr == 0)
-		return (1);
-	nbr_len = 0;
-	while (nbr != 0)
-	{
-		nbr_len++;
-		nbr = nbr / 10;
-	}
-	return (nbr_len);
-}
-
-static int	ft_value_int(int nbr)
-{
-	if (nbr < 0)
-		return (1);
-	return (0);
-}
 
 char		*ft_itoa(int n)
 {
@@ -40,7 +18,7 @@ char		*ft_itoa(int n)
 	int		value;
 	char	*result;
 
-	value = ft_value_int(n);
+	value = ft_sign_int(n);
 	nbr_len = ft_len_int(n);
 	result = NULL;
 	result = (char*)malloc(sizeof(char) * (nbr_len + value + 1));

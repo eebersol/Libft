@@ -1,37 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_end_carac.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/12 19:55:29 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/13 15:58:03 by eebersol         ###   ########.fr       */
+/*   Created: 2015/12/13 15:20:44 by eebersol          #+#    #+#             */
+/*   Updated: 2015/12/13 16:15:11 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+char	*ft_end_carac(char const *str, int len)
 {
-	t_list *new_lst;
-	t_list *f_elem;
-	t_list *basic_elem;
-
-	new_lst = NULL;
-	if (lst && (*f))
-	{
-		new_lst = (*f)(lst);
-		basic_elem = new_lst;
-		lst = lst->next;
-		while (lst)
-		{
-			f_elem = (*f)(lst);
-			basic_elem->next = f_elem;
-			basic_elem = f_elem;
-			lst = lst->next;
-		}
-		basic_elem->next = NULL;
-	}
-	return (new_lst);
+	if (str == NULL)
+		return (NULL);
+	while ((str[len - 1] != '\0') && len > 0 && (str[len - 1] == ' '
+				|| str[len - 1] == '\n' || str[len - 1] == '\t'))
+		len--;
+	return ((char *)&str[len]);
 }

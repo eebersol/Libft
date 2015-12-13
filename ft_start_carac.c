@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_start_carac.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/12 19:55:29 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/13 15:58:03 by eebersol         ###   ########.fr       */
+/*   Created: 2015/12/13 15:24:42 by eebersol          #+#    #+#             */
+/*   Updated: 2015/12/13 15:39:00 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+char	*ft_start_carac(char const *str, int i, int len)
 {
-	t_list *new_lst;
-	t_list *f_elem;
-	t_list *basic_elem;
-
-	new_lst = NULL;
-	if (lst && (*f))
-	{
-		new_lst = (*f)(lst);
-		basic_elem = new_lst;
-		lst = lst->next;
-		while (lst)
-		{
-			f_elem = (*f)(lst);
-			basic_elem->next = f_elem;
-			basic_elem = f_elem;
-			lst = lst->next;
-		}
-		basic_elem->next = NULL;
-	}
-	return (new_lst);
+	while ((str[i] != '\0') && i < len && (str[i] == ' ' || str[i] == '\n'
+				|| str[i] == '\t'))
+		i++;
+	return ((char *)&str[i]);
 }

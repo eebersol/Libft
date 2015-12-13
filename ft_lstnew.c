@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 15:21:18 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/12 20:00:32 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/13 15:17:28 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 		}
 		list->content = ft_memcpy(list->content, content, content_size);
 		list->content_size = content_size;
-	}		
+	}
 	list->next = NULL;
 	return (list);
 }
