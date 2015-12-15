@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 18:45:27 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/11 17:20:31 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/15 14:38:38 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)
 	{
-		((unsigned char *)s)[i] = 0;
+		((char *)s)[i] = 0;
 		i++;
 	}
 }

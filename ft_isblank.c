@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_isblank.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/04 15:25:19 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/15 15:11:59 by eebersol         ###   ########.fr       */
+/*   Created: 2015/12/15 18:18:25 by eebersol          #+#    #+#             */
+/*   Updated: 2015/12/15 19:05:06 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f) (char))
+int		ft_isblank(int i)
 {
-	size_t	i;
-	char	*result;
-
-	if (s == NULL || f == NULL)
-		return (NULL);
-	if (!(result = (char*)malloc(sizeof(*result) * (ft_strlen(s) + 1))))
-		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		result[i] = f(s[i]);
-		i++;
-	}
-	result[i] = '\0';
-	return (result);
+	return (i == ' ' || i == '\t');
 }

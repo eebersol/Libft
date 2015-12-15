@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_chartrim.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/04 15:25:19 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/15 15:11:59 by eebersol         ###   ########.fr       */
+/*   Created: 2015/12/15 16:30:08 by eebersol          #+#    #+#             */
+/*   Updated: 2015/12/15 18:50:31 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f) (char))
+char	*ft_chartrim(char *str, char c)
 {
-	size_t	i;
 	char	*result;
+	int		i;
+	int		j;
+	int		len;
 
-	if (s == NULL || f == NULL)
-		return (NULL);
-	if (!(result = (char*)malloc(sizeof(*result) * (ft_strlen(s) + 1))))
-		return (NULL);
+	len = ft_strlen(str);
 	i = 0;
-	while (s[i])
-	{
-		result[i] = f(s[i]);
+	if (str == NULL)
+		return (NULL);
+	while ((str[len - 1] != '\0') && len >= 0 && (str[len - 1] == (char)c))
+		len--;
+	while ((str[i] != '\0') && i < len && (str[i] == (char)c))
 		i++;
-	}
-	result[i] = '\0';
+	if (!(result = (char*)malloc(sizeof(char) * (len - i + 1))))
+		return (NULL);
+	j = 0;
+	while (i < len)
+		result[j++] = str[i++];
+	result[j] = '\0';
 	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 12:31:30 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/04 13:51:16 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/15 14:56:47 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,7 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	while (s1[j] != '\0')
 		j++;
 	while (i < n)
-	{
-		s1[j] = s2[i];
-		i++;
-		j++;
-	}
+		s1[j++] = s2[i++];
 	s1[j] = '\0';
 	return (s1);
 }

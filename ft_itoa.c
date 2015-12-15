@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 17:25:16 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/13 16:13:14 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/15 17:54:04 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char		*ft_itoa(int n)
 			*--result = '0';
 		while (n != 0)
 		{
-			*--result = ft_abs(n % 10) + '0';
+			*--result = ft_positive(n % 10) + '0';
 			n = n / 10;
 		}
 		if (value)

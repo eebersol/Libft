@@ -6,7 +6,7 @@
 #    By: eebersol <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/30 13:01:06 by eebersol          #+#    #+#              #
-#    Updated: 2015/12/13 16:11:58 by eebersol         ###   ########.fr        #
+#    Updated: 2015/12/15 18:41:02 by eebersol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,19 +64,22 @@ SRCS 	= ft_memset.c \
 		ft_strmapi.c \
 		ft_strsplit.c \
 		ft_itoa.c \
-		ft_abs.c \
+		ft_positive.c \
 		ft_lstnew.c \
 		ft_lstdelone.c \
 		ft_lstdel.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
 		ft_lstadd.c \
-		ft_end_carac.c \
-		ft_start_carac.c \
-		ft_part_len.c \
+		ft_strlenchar.c \
 		ft_part_nbr.c \
 		ft_len_int.c \
 		ft_sign_int.c \
+		ft_chartrim.c \
+		ft_isblank.c \
+		ft_isspace.c \
+		ft_xdigit.c \
+		ft_iscntrl.c \
 
 HEADERS  = includes/libft.h
 
@@ -90,14 +93,14 @@ $(NAME)	:
 	@gcc -c $(CFLAGS) $(SRCS) -I . 
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
-	@echo "Library complet"
+	@echo "Lib compiled"
 
 $(OBJS) : $(NAME) $(HEADERS)
 	@gcc $(CFLAGS) -c $(SRCS)
 
 clean	: 
 	@rm -rf $(OBJS)
-	@echo "Cleaned"
+	@echo "clean .o"
 
 fclean	: clean
 	@echo "Clean all"

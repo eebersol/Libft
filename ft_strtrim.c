@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/12 15:01:09 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/13 15:40:36 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/15 18:49:43 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,7 @@ char	*ft_strtrim(char const *s)
 	j = 0;
 	while (i < len)
 	{
-		result[j] = s[i];
-		i++;
-		j++;
+		result[j++] = s[i++];
 	}
 	result[j] = '\0';
 	return (result);

@@ -6,7 +6,7 @@
 /*   By: eebersol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 14:55:51 by eebersol          #+#    #+#             */
-/*   Updated: 2015/12/13 16:06:08 by eebersol         ###   ########.fr       */
+/*   Updated: 2015/12/15 18:05:17 by eebersol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ char			**ft_strsplit(char const *s, char c)
 	{
 		while (*s == c && *s != '\0')
 			s++;
-		t[i] = ft_strsub((const char *)s, 0, ft_part_len((const char *)s, c));
+		t[i] = ft_strsub((const char *)s, 0, ft_strlenchar((const char *)s, c));
 		if (t[i] == NULL)
 			return (NULL);
-		s = s + ft_part_len(s, c);
+		s = s + ft_strlenchar(s, c);
 		i++;
 	}
 	t[i] = NULL;
