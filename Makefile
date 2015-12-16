@@ -6,7 +6,7 @@
 #    By: eebersol <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/30 13:01:06 by eebersol          #+#    #+#              #
-#    Updated: 2015/12/15 20:28:09 by eebersol         ###   ########.fr        #
+#    Updated: 2015/12/16 17:18:17 by eebersol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,9 +79,7 @@ SRCS 	= ft_memset.c \
 		ft_isblank.c \
 		ft_isspace.c \
 		ft_xdigit.c \
-		ft_iscntrl.c \
-
-HEADERS  = includes/libft.h
+		ft_iscntrl.c 
 
 OBJS 	= $(subst .c,.o,$(SRCS))
 
@@ -95,7 +93,7 @@ $(NAME)	:
 	@ranlib $(NAME)
 	@echo "Lib compiled"
 
-$(OBJS) : $(NAME) $(HEADERS)
+$(OBJS) : $(NAME)
 	@gcc $(CFLAGS) -c $(SRCS)
 
 clean	: 
