@@ -6,13 +6,14 @@
 #    By: eebersol <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/30 13:01:06 by eebersol          #+#    #+#              #
-#    Updated: 2015/12/16 17:18:17 by eebersol         ###   ########.fr        #
+#    Updated: 2016/02/28 17:55:09 by eebersol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+#Define the program
 NAME 	= libft.a
 
-SRCS 	= ft_memset.c \
+_SRCS 	= ft_memset.c \
 	   	ft_bzero.c \
 	   	ft_memcpy.c \
 	   	ft_memccpy.c \
@@ -69,6 +70,7 @@ SRCS 	= ft_memset.c \
 		ft_lstdelone.c \
 		ft_lstdel.c \
 		ft_lstiter.c \
+		ft_lstiter_if.c \
 		ft_lstmap.c \
 		ft_lstadd.c \
 		ft_strlenchar.c \
@@ -79,29 +81,41 @@ SRCS 	= ft_memset.c \
 		ft_isblank.c \
 		ft_isspace.c \
 		ft_xdigit.c \
-		ft_iscntrl.c 
+		ft_freejoin.c \
+		ft_iscntrl.c \
+		ft_lstsort.c \
+		ft_lstrev.c
 
-OBJS 	= $(subst .c,.o,$(SRCS))
+SRCS 	= $(addprefix srcs/,$(_SRCS))
 
-CFLAGS 	= -Wall -Wextra -Werror
+SRCS_O   = $(subst .c,.o,$(_SRCS))
+
+CFLAGS 	= -Wall -Wextra -Werror -c
+
+CC 		= gcc $(CFLAGS)
 
 all		: $(NAME)
 
-$(NAME)	:
-	@gcc -c $(CFLAGS) $(SRCS) -I . 
-	@ar rc $(NAME) $(OBJS)
+$(NAME) :
+	@$(CC) $(SRCS) -Iincludes
+	@mkdir bin
+	@ar rc $(NAME) $(SRCS_O)
 	@ranlib $(NAME)
+	@mv $(SRCS_O) bin/
 	@echo "Lib compiled"
 
-$(OBJS) : $(NAME)
-	@gcc $(CFLAGS) -c $(SRCS)
+$(SRCS) : $(NAME)
+	@$(CC)  $(_SRCS)
 
 clean	: 
-	@rm -rf $(OBJS)
+	@/bin/rm -rf bin
 	@echo "clean .o"
 
 fclean	: clean
+	@/bin/rm -rf bin
+	@/bin/rm -rf $(NAME)
 	@echo "Clean all"
-	@/bin/rm -f $(NAME)
 
 re		: fclean all
+
+.PHONY: all, clean, fclean, re
